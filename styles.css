@@ -1,4 +1,27 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .image{
     height: 50px;
     width: 50px;
+}
+
+body{
+    background-color: #24272e;
+}
+
+header{
+    background: white;
+    padding: 20px;
+}
+
+header > h1{
+    color: #424b69;
+    text-align: center;
+    font-family: Asap, sans-serif;
 }
