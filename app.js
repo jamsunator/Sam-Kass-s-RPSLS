@@ -72,19 +72,22 @@ actionButton.addEventListener('click', function () {
 const getWinner = (user, computer) => {
   if (user === computer) {
     result.innerHTML = "Tie! Try again!";
-  } else {
+  } else if (user !== computer) {
     // if (console.log(Object.keys(winner[user]))
-    if (Object.keys(winner[user]).includes(computer)){
+    if (Object.keys(winner[user]).includes(computer)){//winner winner chicken dinner
       let msg = winner[user][computer];
-      // console.log(msg);
-      result.innerHTML = `Winner! ${user} ${msg}`; 
+      result.innerHTML = `Winner! ${user} ${msg}`;
+      userScore++; 
+      userDisplay.innerHTML = userScore;
+    }
+    else if(!(Object.keys(winner[user]).includes(computer))){
+      let msg = winner[computer][user];
+      result.innerHTML = `You lost this round :(. ${computer} ${msg}`;
+      computerScore++;
+      computerDisplay.innerHTML = computerScore;
     }
   }
-
 }
-
-
-
 
 function reset() {
   let userScore = 0;
